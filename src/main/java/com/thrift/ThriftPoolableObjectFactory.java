@@ -33,6 +33,7 @@ public class ThriftPoolableObjectFactory implements PoolableObjectFactory {
      * @return
      * @throws Exception
      */
+    @Override
     public TTransport makeObject() throws Exception {
         try {
             TTransport transport = new TSocket(this.serviceIP, this.servicePort, this.timeOut);
@@ -49,6 +50,7 @@ public class ThriftPoolableObjectFactory implements PoolableObjectFactory {
      * @param tTransport
      * @throws Exception
      */
+    @Override
     public void destroyObject(Object tTransport) throws Exception {
         TTransport transport = (TTransport) tTransport;
         if (transport.isOpen()) {
@@ -61,6 +63,7 @@ public class ThriftPoolableObjectFactory implements PoolableObjectFactory {
      * @param tObject
      * @return
      */
+    @Override
     public boolean validateObject(Object tObject) {
         TTransport tTransport = (TTransport) tObject;
         try {
@@ -84,6 +87,7 @@ public class ThriftPoolableObjectFactory implements PoolableObjectFactory {
      * @param tTransport
      * @throws Exception
      */
+    @Override
     public void activateObject(Object tTransport) throws Exception {
 
     }
@@ -93,6 +97,7 @@ public class ThriftPoolableObjectFactory implements PoolableObjectFactory {
      * @param tTransport
      * @throws Exception
      */
+    @Override
     public void passivateObject(Object tTransport) throws Exception {
 
     }

@@ -32,6 +32,7 @@ public class ConnectionManager implements MethodInterceptor {
         this.connectionProvider = connectionProvider;
     }
 
+    @Override
     public Object invoke(MethodInvocation methodInvocation) throws Throwable {
         TSocket socket = null;
         ObjectPool pool = null;

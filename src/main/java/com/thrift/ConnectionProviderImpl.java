@@ -69,6 +69,7 @@ public class ConnectionProviderImpl implements ConnectionProvider, InitializingB
         return random.nextInt(max);
     }
 
+    @Override
     public ObjectPool getPool() {
         try {
             int poolSize = objectPoolList.size();
@@ -78,6 +79,7 @@ public class ConnectionProviderImpl implements ConnectionProvider, InitializingB
         }
     }
 
+    @Override
     public void returnCon(ObjectPool objectPool, TSocket socket) {
         try {
             // 将对象放回对象池
@@ -89,6 +91,7 @@ public class ConnectionProviderImpl implements ConnectionProvider, InitializingB
         }
     }
 
+    @Override
     public void destroy() throws Exception {
         try {
             if (CollectionUtils.isNotEmpty(objectPoolList)) {
@@ -101,6 +104,7 @@ public class ConnectionProviderImpl implements ConnectionProvider, InitializingB
         }
     }
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         String[] hosts = serviceIP.split(",");
         for (String host : hosts) {
