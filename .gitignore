@@ -19,7 +19,7 @@
 *.iml
 *.ipr
 *.iws
-.idea/
+.idea/*
 
 ## .gitignore for eclipse
 *.pydevproject
